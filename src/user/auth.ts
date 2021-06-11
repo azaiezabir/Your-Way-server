@@ -20,5 +20,4 @@ const loginValidation = (user:User) => {
     return Joi.validate(user, schema)
 }
 
-module.exports.signupValidation = signupValidation
-module.exports.loginValidation = loginValidation
+export = {signupValidation,loginValidation}
