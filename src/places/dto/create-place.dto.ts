@@ -4,4 +4,6 @@ export class CreatePlaceDto {
   description: string;
   tags: string;
   id_category: string;
+  long: number;
+  lang: number;
 }

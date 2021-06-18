@@ -10,7 +10,7 @@ export class User {
   @Prop()
   email: string;
   @Prop()
-  phone: string;
+  phone: number;
   @Prop()
   date_of_birth: string;
   @Prop()

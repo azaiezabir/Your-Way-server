@@ -12,6 +12,10 @@ export class Place {
   description: string;
   @Prop()
   tags: string;
+  @Prop()
+  long: number;
+  @Prop()
+  lang: number;
   // @Prop()
   // id_category: string;
 
