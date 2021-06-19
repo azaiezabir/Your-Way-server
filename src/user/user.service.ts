@@ -83,7 +83,7 @@ export class UserService {
   //   return this.user.findOne({ email });
   // }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
+  update(id: string, updateUserDto: any) {
     return this.user.findOne({ _id: id }).updateOne(updateUserDto);
   }
 
