@@ -15,7 +15,7 @@ export class Place {
   @Prop()
   long: number;
   @Prop()
-  lang: number;
+  lat: number;
   // @Prop()
   // id_category: string;
 

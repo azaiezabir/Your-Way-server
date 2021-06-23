@@ -18,15 +18,15 @@ export class CategoriesService {
     return this.category.find({});
   }
 
-  findOne(id: number) {
-    return this.category.findOne({ id });
+  findOne(id: string) {
+    return this.category.findOne({ _id: id });
   }
 
-  update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return this.category.findOne({ _id: id }).updateOne(UpdateCategoryDto);
+  update(id: string, updateCategoryDto: UpdateCategoryDto) {
+    return this.category.findOne({ _id: id }).updateOne(updateCategoryDto);
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return this.category.deleteOne({ _id: id });
   }
 }

@@ -7,6 +7,6 @@ export class Place extends Document {
   tags: string;
   id_category: string;
   long: number;
-  lang: number;
+  lat: number;
 }
 
