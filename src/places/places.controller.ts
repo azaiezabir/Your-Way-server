@@ -35,8 +35,8 @@ export class PlacesController {
 
   @Get('/nearest')
   findAllP(@Query('long') long, @Query('lat') lat) {
-    console.log('long');
-
+    console.log(long);
+    console.log(lat);
 
     return this.placesService.findAllPlaces(long, lat);
   }

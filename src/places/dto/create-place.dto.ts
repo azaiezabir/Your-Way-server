@@ -4,6 +4,10 @@ export class CreatePlaceDto {
   description: string;
   tags: string;
   id_category: string;
-  long: number;
-  lang: number;
+  location: Coordinate;
+}
+
+interface Coordinate {
+  type: string;
+  coordinates: [number]
 }

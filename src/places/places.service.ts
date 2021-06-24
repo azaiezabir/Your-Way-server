@@ -25,13 +25,13 @@ export class PlacesService {
     this.place.createIndexes({ point: '2dsphere' });
     return this.place.find({
       location: {
-        $nearSphere: {
+        $near: {
           $geometry: {
             type: 'Point',
             coordinates: [Number(long), Number(lat)],
           },
-          $minDistance: 1000,
-          // $maxDistance: 2000,
+          $minDistance: 0,
+          $maxDistance: 2000000,
         },
       },
     });
