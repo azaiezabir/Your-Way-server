@@ -1,4 +1,5 @@
 import { Document } from 'mongoose';
+import { Coordinates } from './coordinates.schema';
 
 export interface Place extends Document {
   name: string;
@@ -6,7 +7,5 @@ export interface Place extends Document {
   description: string;
   tags: string;
   id_category: string;
-  long: number;
-  lat: number;
+  location: Coordinates;
 }
-

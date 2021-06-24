@@ -21,7 +21,7 @@ export class PlacesService {
   }
 
   findAllPlaces(long, lat) {
-    console.log(typeof long);
+    //console.log(typeof long);
     this.place.createIndexes({ point: '2dsphere' });
     return this.place.find({
       location: {
@@ -31,7 +31,7 @@ export class PlacesService {
             coordinates: [Number(long), Number(lat)],
           },
           $minDistance: 0,
-          $maxDistance: 2000000,
+          $maxDistance: 200000,
         },
       },
     });

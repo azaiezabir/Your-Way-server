@@ -28,8 +28,7 @@ export class PlacesController {
 
   @Get('/onecategory')
   findAllCat(@Query('id_category') id_category) {
-    console.log('test category');
-
+    // console.log('test category');
     return this.placesService.findAllCategories({ id_category });
   }
 
