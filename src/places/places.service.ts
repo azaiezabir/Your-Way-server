@@ -12,9 +12,9 @@ export class PlacesService {
     return this.place.create(createPlaceDto);
   }
 
-  // findAll() {
-  //   return this.place.find({}).populate('id_category');
-  // }
+  findAll() {
+    return this.place.find({}).populate('id_category');
+  }
 
   findAllCategories(args) {
     return this.place.find(...args).populate('id_category');

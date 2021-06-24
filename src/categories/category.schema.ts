@@ -4,6 +4,8 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 export class Category {
   @Prop()
   name: string;
+  @Prop()
+  picture: string;
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category);
