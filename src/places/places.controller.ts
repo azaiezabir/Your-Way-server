@@ -21,10 +21,10 @@ export class PlacesController {
     return this.placesService.create(createPlaceDto);
   }
 
-  // @Get()
-  // findAll() {
-  //   return this.placesService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.placesService.findAll();
+  }
 
   @Get('/onecategory')
   findAllCat(@Query('id_category') id_category) {
