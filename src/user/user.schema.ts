@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 // import { Document } from 'mongoose';
-
 @Schema()
 export class User {
   @Prop()
@@ -14,7 +13,7 @@ export class User {
   @Prop()
   date_of_birth: string;
   @Prop()
-  gender: string;
+  gender: string ;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
