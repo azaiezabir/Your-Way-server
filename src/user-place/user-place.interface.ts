@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export class UserPlace extends Document {
+export interface UserPlace extends Document {
   favorit: string;
   rate: string;
 }

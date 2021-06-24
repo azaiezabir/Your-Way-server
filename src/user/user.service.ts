@@ -51,10 +51,10 @@ export class UserService {
     const { password } = user;
     const isMatch = await bcrypt.compare(updateUserDto.password, password);
     if (isMatch) {
-      // const payload = { email: user.email };
+      const payload = { email: user.email };
 
-      // const token = this.jwtService.sign(payload);
-      return user;
+      const token = this.jwtService.sign(payload);
+      return {token , user};
     } else {
       return 'incorrect password';
     }

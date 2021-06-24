@@ -17,11 +17,24 @@ export class PlacesService {
   }
 
   findAllCategories(args) {
-    return this.place.find(...args).populate('id_category');
+    return this.place.find(args).populate('id_category');
   }
 
-  findAllPlaces(args) {
-    return this.place.find(...args);
+  findAllPlaces(long, lat) {
+    console.log(typeof long);
+    this.place.createIndexes({ point: '2dsphere' });
+    return this.place.find({
+      location: {
+        $nearSphere: {
+          $geometry: {
+            type: 'Point',
+            coordinates: [Number(long), Number(lat)],
+          },
+          $minDistance: 1000,
+          // $maxDistance: 2000,
+        },
+      },
+    });
   }
 
   findOne(id: string) {

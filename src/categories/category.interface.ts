@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export class Category extends Document {
+export interface Category extends Document {
   name: string;
   picture: string;
 }

@@ -21,30 +21,24 @@ export class PlacesController {
     return this.placesService.create(createPlaceDto);
   }
 
-  @Get()
-  findAll() {
-    return this.placesService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.placesService.findAll();
+  // }
 
-  @Get()
-  findAllCategories(@Query('id_category') id_category) {
+  @Get('/onecategory')
+  findAllCat(@Query('id_category') id_category) {
+    console.log('test category');
+
     return this.placesService.findAllCategories({ id_category });
   }
 
-  @Get()
-  findAllPlaces(@Query('long') long, @Query('lat') lat) {
-    return this.placesService.findAllPlaces({
-      mapLoc: {
-        $near: {
-          $geometry: {
-            type: 'Point',
-            coordinates: [long, lat],
-          },
-          $maxDistance: 1,
-          $minDistance: 30,
-        },
-      },
-    });
+  @Get('/nearest')
+  findAllP(@Query('long') long, @Query('lat') lat) {
+    console.log('long');
+
+
+    return this.placesService.findAllPlaces(long, lat);
   }
 
   @Get(':id')
