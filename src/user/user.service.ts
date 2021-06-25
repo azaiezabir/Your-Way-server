@@ -54,7 +54,12 @@ export class UserService {
       const payload = { email: user.email };
 
       const token = this.jwtService.sign(payload);
-      return JSON.stringify({ token }), user;
+      // console.log(token);
+      // console.log(user);
+      
+
+      return ( JSON.stringify({ token }), user);
+
     } else {
       return 'incorrect password';
     }
