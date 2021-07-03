@@ -7,13 +7,12 @@ import { PlacesModule } from './places/places.module';
 import { CategoriesModule } from './categories/categories.module';
 import { UserPlaceModule } from './user-place/user-place.module';
 import { JwtModule } from '@nestjs/jwt';
+import { env } from './config';
 @Module({
   imports: [
     UserModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://myway:myway@cluster0.a6hnw.mongodb.net/myway?retryWrites=true&w=majority',
-    ),
-    JwtModule.register({ secret: 'secret' }),
+    MongooseModule.forRoot(env.Connection),
+    JwtModule.register({ secret: env.secret }),
     PlacesModule,
     CategoriesModule,
     UserPlaceModule,
