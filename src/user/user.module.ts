@@ -7,10 +7,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { env } from '../config';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
-    JwtModule.register({ secret: env.secret }),
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
+  JwtModule.register({ secret: env.secret })],
   controllers: [UserController],
   providers: [UserService],
 })

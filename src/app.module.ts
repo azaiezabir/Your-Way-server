@@ -12,7 +12,7 @@ import { env } from './config';
   imports: [
     UserModule,
     MongooseModule.forRoot(env.Connection),
-    JwtModule.register({ secret: env.secret }),
+    JwtModule.register({secret : env.secret}),
     PlacesModule,
     CategoriesModule,
     UserPlaceModule,
